@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="outer">
+        <button id="inner">Click e</button>
+      </div>
+     <script>
+        document.getElementById('outer').addEventListener(
+  'click',
+  () => console.log('Outer Div (Capturing)'),
+  true // capturing
+);
+
+document.getElementById('outer').addEventListener(
+  'click',
+  () => console.log('Outer Div (Bubbling)')
+); // bubbling (default)
+
+document.getElementById('inner').addEventListener('click', () =>
+  console.log('Button Clicked')
+);
+
+     </script>      
+</body>
+</html>
